@@ -1,0 +1,92 @@
+<div class="page-container">
+
+	<!-- Page content -->
+	<div class="page-content">
+
+		<!-- Main sidebar -->
+		<div class="sidebar sidebar-main">
+			<div class="sidebar-content">
+
+				<!-- User menu -->
+				<div class="sidebar-user">
+					<div class="category-content">
+						<div class="media">
+							<a href="/dashboard" class="media-left"><img src="<%=/images/+session.user.profileimage%>"
+									class="img-circle img-sm" alt=""></a>
+							<div class="media-body">
+								<span class="media-heading text-semibold">
+									<%= session.user.name%>
+								</span>
+								<div class="text-size-mini text-muted">
+
+								</div>
+							</div>
+
+							<div class="media-right media-middle">
+								<!-- <ul class="icons-list">
+									<li>
+										<a href="/changepassword"><i class="icon-cog3"></i></a>
+									</li>
+								</ul> -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /user menu -->
+				<!-- Main navigation -->
+				<div class="sidebar-category sidebar-category-visible">
+					<div class="category-content no-padding">
+						<ul class="navigation navigation-main navigation-accordion">
+
+							<!-- Main -->
+							<li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i>
+							</li>
+							<li class="<%= (title == 'dashboard_active'?'active':'') %>"><a href="/dashboard"><i
+										class="icon-home4"></i> <span>Dashboard</span></a></li>
+							<li>
+								<a href="#"><i class="icon-user"></i> <span>Users</span></a>
+								<ul>
+									<li class="<%= (title == 'user_active'?'active':'') %>"><a href="/users">User
+											Listing</a></li>
+								</ul>
+							</li>
+							
+						
+							<li>
+								<a href="#"><i class="icon-file-openoffice"></i> <span>CMS</span></a>
+								<ul>
+									<li class="<%= (title == 'cm_active'?'active':'') %>"><a
+											href="/termconditions">Terms & Conditions</a></li>
+									<li class="<%= (title == 'cmsc_active'?'active':'') %>"><a href="/privacy">Privacy
+											Policy </a></li>
+									<li class="<%= (title == 'c_active'?'active':'') %>"><a href="/aboutus">About Us</a>
+									</li>
+								</ul>
+							</li>
+						
+							
+							
+							
+						</ul>
+						<li>
+							<a href="/logout"><i class="icon-switch2"></i> <span>Logout</span></a>
+						</li>
+					</div>
+				</div>
+				<!-- /main navigation -->
+			</div>
+		</div>
+		<!-- /main sidebar -->
+		<!-- Main content -->
+		<div class="content-wrapper">
+			<!-- Page header -->
+			<!-- <div class="page-header page-header-default">
+				<div class="page-header-content">
+					<div class="page-title">
+						<h4><a href="/dashboard"> <i class="icon-arrow-left52 position-left"></i> <span
+									class="text-semibold">Home</span></a></h4>
+					</div>
+				</div>
+			</div> -->
+			<!-- /page header -->
+			<!-- Content area -->

@@ -1,0 +1,133 @@
+<div class="footer text-muted">
+    &copy; 2022. <span class="info">Stop Community App</span> by<a href="https://www.cqlsys.com/">CQLSYS</a>
+
+</div>
+<script>
+    setTimeout(function () {
+        $("div.msg").fadeOut();
+    }, 2000);
+</script>
+
+<script>
+
+    // $(document).ready(function () {
+    //     alert("ready!");
+    // });         
+
+    function confirmDelete(id, model) {
+
+        console.log("------------------------------------", id)
+
+        // var model=$('#button').attr(model).val()
+        console.log(model);
+
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "Are You sure want to delete this skill?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: "/deleteskills/:id",
+                    type: 'post',
+                    data: {
+                        id: id,
+                        model: model,
+                    },
+                    success: function (result) {
+                    }
+                });
+                swalWithBootstrapButtons.fire(
+                    'Deleted!',
+                    'Your Skill has been deleted.',
+                    'success'
+                ).then(() => {
+                    location.reload();
+                })
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire(
+                    'Cancelled',
+                    'Your imaginary file is safe :)',
+                    'error'
+                )
+            }
+        })
+    }
+</script>
+
+<script>
+
+    // $(document).ready(function () {
+    //     alert("ready!");
+    // });         
+
+    function confirmTrash(id, model) {
+
+        console.log("------------------------------------", id)
+
+        // var model=$('#button').attr(model).val()
+        console.log(model);
+
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "Are You sure want to trash this skill?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, trash it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: "/trashskills/:id",
+                    type: 'post',
+                    data: {
+                        id: id,
+                        model: model,
+                    },
+                    success: function (result) {
+                    }
+                });
+                swalWithBootstrapButtons.fire(
+                    'Trashed!',
+                    'Your Skill has been trashed.',
+                    'success'
+                ).then(() => {
+                    location.reload();
+                })
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire(
+                    'Cancelled',
+                    'Your imaginary file is safe :)',
+                    'error'
+                )
+            }
+        })
+    }
+</script>
